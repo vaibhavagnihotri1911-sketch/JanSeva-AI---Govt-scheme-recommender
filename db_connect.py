@@ -6,7 +6,7 @@
 #         host="localhost",
 #         database="india_schemes_db",
 #         user="postgres",
-#         password="Sneha@123",
+#         password="your_password_here",
 #         port="5433"
 #     )
 
