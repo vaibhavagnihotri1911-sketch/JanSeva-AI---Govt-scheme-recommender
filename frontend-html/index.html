@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JanSeva AI – Discover Indian government schemes instantly using AI-powered search in Hindi, Hinglish or English.">
+    <title>JanSeva AI - AI-Powered Government Scheme Discovery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <div class="brand-logo">
+                <i data-lucide="landmark" class="brand-icon"></i>
+            </div>
+            <span>JanSeva <span class="brand-highlight">AI</span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#" class="active" id="nav-home">Home</a>
+            <a href="#categories-section" id="nav-schemes">Schemes</a>
+            <a href="#popular-section" id="nav-popular">Popular</a>
+            <a href="#footer" id="nav-about">About</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                <i data-lucide="sun" id="theme-icon" style="width:16px;height:16px;"></i>
+            </button>
+            <button class="login-btn" id="login-btn" onclick="openSignIn()">
+                <i data-lucide="user" style="width:14px;height:14px;"></i>
+                Sign In
+            </button>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <i data-lucide="menu" style="width:20px;height:20px;"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i data-lucide="sparkles" style="width:12px;height:12px;"></i>
+                AI-Powered Scheme Discovery
+            </div>
+            <h1>Find Government Schemes <span class="gradient-text">Made for You</span></h1>
+            <p class="hero-subtitle">Describe your situation in plain language — Hindi, Hinglish, or English — and get personalized scheme recommendations instantly.</p>
+
+            <!-- Search Box -->
+            <div class="search-wrapper">
+                <div class="search-box" id="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="e.g. 'main ek garib student hoon, mujhe scholarship chahiye'"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <button class="clear-btn" id="clear-btn" title="Clear search" style="display:none;">
+                        <i data-lucide="x" style="width:14px;height:14px;"></i>
+                    </button>
+                    <button class="voice-btn" id="voice-btn" title="Search by voice (Hindi/Hinglish/English)">
+                        <i data-lucide="mic" style="width:16px;height:16px;" id="mic-icon"></i>
+                    </button>
+                    <button class="search-btn" id="search-btn" onclick="searchSchemes()">
+                        <i data-lucide="search" style="width:16px;height:16px;"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+
+                <!-- Suggestions Dropdown -->
+                <div class="suggestions-dropdown" id="suggestions-dropdown">
+                    <div class="suggestion-label">Try these searches</div>
+                    <div class="suggestion-item" onclick="quickSearch('main ek garib kisan hoon, mujhe khet ke liye paisa chahiye')">
+                        <i data-lucide="tractor" style="width:14px;height:14px;"></i>
+                        main ek garib kisan hoon, mujhe khet ke liye paisa chahiye
+                    </div>
+                    <div class="suggestion-item" onclick="quickSearch('poor student scholarship for higher education')">
+                        <i data-lucide="graduation-cap" style="width:14px;height:14px;"></i>
+                        poor student scholarship for higher education
+                    </div>
+                    <div class="suggestion-item" onclick="quickSearch('women self help group loan scheme')">
+                        <i data-lucide="users" style="width:14px;height:14px;"></i>
+                        women self help group loan scheme
+                    </div>
+                    <div class="suggestion-item" onclick="quickSearch('health insurance for below poverty line family')">
+                        <i data-lucide="heart-pulse" style="width:14px;height:14px;"></i>
+                        health insurance for below poverty line family
+                    </div>
+                    <div class="suggestion-item" onclick="quickSearch('SC ST student scholarship scheme')">
+                        <i data-lucide="award" style="width:14px;height:14px;"></i>
+                        SC ST student scholarship scheme
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-schemes">200+</span>
+                    <span class="stat-label">Schemes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">AI</span>
+                    <span class="stat-label">Powered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Languages</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">Free</span>
+                    <span class="stat-label">Access</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Results Section -->
+    <section id="results-section">
+        <div class="results-inner">
+            <div class="results-header">
+                <div class="results-meta">
+                    <h2 id="results-title">Search Results</h2>
+                    <span class="intent-badge" id="intent-badge" style="display:none;"></span>
+                </div>
+                <div class="results-actions">
+                    <button class="close-results-btn" id="close-results-btn" title="Close results">
+                        <i data-lucide="x" style="width:16px;height:16px;"></i>
+                        Close
+                    </button>
+                </div>
+            </div>
+            <div class="search-query-display" id="search-query-display"></div>
+            <div id="results-container" class="results-grid"></div>
+        </div>
+    </section>
+
+    <!-- Featured Carousel -->
+    <section class="carousel-section" id="carousel-section">
+        <div class="section-header">
+            <div class="section-tag">Featured</div>
+            <h2>Top Government Schemes</h2>
+            <p>Landmark programs that have transformed millions of lives</p>
+        </div>
+        <div class="carousel-container" id="carousel-container">
+            <div class="slide active" data-index="0">
+                <div class="slide-content">
+                    <span class="badge badge-health">Health</span>
+                    <h2>Ayushman Bharat PM-JAY</h2>
+                    <p>Health insurance coverage of up to ₹5 lakh per family per year for secondary and tertiary care hospitalization. Covers 10+ crore poor families.</p>
+                    <div class="slide-tags">
+                        <span class="slide-tag"><i data-lucide="users" style="width:11px;height:11px;"></i> 10 Crore Families</span>
+                        <span class="slide-tag"><i data-lucide="indian-rupee" style="width:11px;height:11px;"></i> ₹5 Lakh/year</span>
+                    </div>
+                    <button class="action-btn" onclick="quickSearch('health insurance ayushman bharat')">
+                        Explore Scheme <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                    </button>
+                </div>
+                <div class="slide-visual slide-visual-health">
+                    <div class="slide-icon-bg">
+                        <i data-lucide="heart-pulse" style="width:64px;height:64px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-index="1">
+                <div class="slide-content">
+                    <span class="badge badge-agri">Agriculture</span>
+                    <h2>PM Kisan Samman Nidhi</h2>
+                    <p>Direct income support of ₹6,000 per year for all landholding farmer families across India. Paid in three equal installments directly to bank accounts.</p>
+                    <div class="slide-tags">
+                        <span class="slide-tag"><i data-lucide="tractor" style="width:11px;height:11px;"></i> 12 Crore Farmers</span>
+                        <span class="slide-tag"><i data-lucide="indian-rupee" style="width:11px;height:11px;"></i> ₹6,000/year</span>
+                    </div>
+                    <button class="action-btn" onclick="quickSearch('farmer income support pm kisan')">
+                        Explore Scheme <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                    </button>
+                </div>
+                <div class="slide-visual slide-visual-agri">
+                    <div class="slide-icon-bg">
+                        <i data-lucide="sprout" style="width:64px;height:64px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-index="2">
+                <div class="slide-content">
+                    <span class="badge badge-education">Education</span>
+                    <h2>PM YASASVI Scholarship</h2>
+                    <p>Pre-matric and post-matric scholarship scheme for OBC, EBC and DNT students. Provides financial assistance to pursue quality education.</p>
+                    <div class="slide-tags">
+                        <span class="slide-tag"><i data-lucide="graduation-cap" style="width:11px;height:11px;"></i> OBC / EBC / DNT</span>
+                        <span class="slide-tag"><i data-lucide="book-open" style="width:11px;height:11px;"></i> Class 9–12</span>
+                    </div>
+                    <button class="action-btn" onclick="quickSearch('OBC student scholarship YASASVI')">
+                        Explore Scheme <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                    </button>
+                </div>
+                <div class="slide-visual slide-visual-edu">
+                    <div class="slide-icon-bg">
+                        <i data-lucide="graduation-cap" style="width:64px;height:64px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn" id="prev-btn">
+                    <i data-lucide="chevron-left" style="width:18px;height:18px;"></i>
+                </button>
+                <div class="carousel-dots" id="carousel-dots">
+                    <div class="dot active" data-slide="0"></div>
+                    <div class="dot" data-slide="1"></div>
+                    <div class="dot" data-slide="2"></div>
+                </div>
+                <button class="carousel-btn next-btn" id="next-btn">
+                    <i data-lucide="chevron-right" style="width:18px;height:18px;"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories-section">
+        <div class="section-header">
+            <div class="section-tag">Browse</div>
+            <h2>Explore by Category</h2>
+            <p>Find schemes tailored for your specific needs</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card" onclick="quickSearch('farmer agriculture kisan loan subsidy')" id="cat-farmer">
+                <div class="icon-wrapper cat-agri">
+                    <i data-lucide="tractor"></i>
+                </div>
+                <h3>Farmers</h3>
+                <p>Agricultural support, loans & subsidies</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+            <div class="category-card" onclick="quickSearch('women mahila empowerment loan scheme')" id="cat-women">
+                <div class="icon-wrapper cat-women">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3>Women</h3>
+                <p>Empowerment, welfare & business programs</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+            <div class="category-card" onclick="quickSearch('student scholarship education loan merit')" id="cat-student">
+                <div class="icon-wrapper cat-edu">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+                <h3>Students</h3>
+                <p>Scholarships, education loans & fellowships</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+            <div class="category-card" onclick="quickSearch('health medical insurance hospital treatment')" id="cat-health">
+                <div class="icon-wrapper cat-health">
+                    <i data-lucide="heart-pulse"></i>
+                </div>
+                <h3>Health</h3>
+                <p>Medical insurance & hospital assistance</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+            <div class="category-card" onclick="quickSearch('SC ST OBC minority reservation scheme')" id="cat-minority">
+                <div class="icon-wrapper cat-minority">
+                    <i data-lucide="shield"></i>
+                </div>
+                <h3>SC / ST / OBC</h3>
+                <p>Reserved category benefits & upliftment</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+            <div class="category-card" onclick="quickSearch('housing home loan pradhan mantri awas yojana')" id="cat-housing">
+                <div class="icon-wrapper cat-housing">
+                    <i data-lucide="home"></i>
+                </div>
+                <h3>Housing</h3>
+                <p>Home loans & affordable housing schemes</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+            <div class="category-card" onclick="quickSearch('startup business entrepreneur loan MSME')" id="cat-business">
+                <div class="icon-wrapper cat-business">
+                    <i data-lucide="briefcase"></i>
+                </div>
+                <h3>Business</h3>
+                <p>Startup funding & MSME support</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+            <div class="category-card" onclick="quickSearch('senior citizen elderly pension welfare')" id="cat-senior">
+                <div class="icon-wrapper cat-senior">
+                    <i data-lucide="user-check"></i>
+                </div>
+                <h3>Senior Citizens</h3>
+                <p>Pension schemes & social security</p>
+                <div class="card-arrow"><i data-lucide="arrow-right" style="width:16px;height:16px;"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Schemes Section -->
+    <section class="popular-section" id="popular-section">
+        <div class="section-header">
+            <div class="section-tag">Trending</div>
+            <h2>Popular Schemes</h2>
+            <p>Most searched government schemes across India</p>
+        </div>
+        <div class="scheme-grid">
+            <div class="scheme-card" id="scheme-yasasvi">
+                <div class="scheme-card-top">
+                    <div class="scheme-icon scheme-icon-edu"><i data-lucide="award"></i></div>
+                    <span class="scheme-tag">Education</span>
+                </div>
+                <h3>PM YASASVI</h3>
+                <p>Pre-matric and post-matric scholarship for OBC, EBC and DNT students pursuing quality education.</p>
+                <a href="#" class="read-more" onclick="event.preventDefault(); quickSearch('PM YASASVI scholarship OBC student')">
+                    Explore Scheme <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                </a>
+            </div>
+            <div class="scheme-card" id="scheme-kisan">
+                <div class="scheme-card-top">
+                    <div class="scheme-icon scheme-icon-agri"><i data-lucide="sprout"></i></div>
+                    <span class="scheme-tag">Agriculture</span>
+                </div>
+                <h3>PM Kisan Samman</h3>
+                <p>Financial benefit of ₹6,000 per year provided to eligible farmer families across India in 3 installments.</p>
+                <a href="#" class="read-more" onclick="event.preventDefault(); quickSearch('PM Kisan farmer income support')">
+                    Explore Scheme <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                </a>
+            </div>
+            <div class="scheme-card" id="scheme-ayushman">
+                <div class="scheme-card-top">
+                    <div class="scheme-icon scheme-icon-health"><i data-lucide="shield-check"></i></div>
+                    <span class="scheme-tag">Healthcare</span>
+                </div>
+                <h3>Ayushman Bharat</h3>
+                <p>World's largest health insurance scheme covering ₹5 lakh annually per family for hospitalization expenses.</p>
+                <a href="#" class="read-more" onclick="event.preventDefault(); quickSearch('Ayushman Bharat health insurance poor family')">
+                    Explore Scheme <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                </a>
+            </div>
+            <div class="scheme-card" id="scheme-awas">
+                <div class="scheme-card-top">
+                    <div class="scheme-icon scheme-icon-housing"><i data-lucide="home"></i></div>
+                    <span class="scheme-tag">Housing</span>
+                </div>
+                <h3>PM Awas Yojana</h3>
+                <p>Affordable housing for all — urban and rural beneficiaries get subsidized home loans and construction grants.</p>
+                <a href="#" class="read-more" onclick="event.preventDefault(); quickSearch('PM Awas Yojana housing loan poor')">
+                    Explore Scheme <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                </a>
+            </div>
+            <div class="scheme-card" id="scheme-mudra">
+                <div class="scheme-card-top">
+                    <div class="scheme-icon scheme-icon-business"><i data-lucide="briefcase"></i></div>
+                    <span class="scheme-tag">Business</span>
+                </div>
+                <h3>PM Mudra Yojana</h3>
+                <p>Collateral-free business loans up to ₹10 lakh for micro enterprises, small businesses and self-employed individuals.</p>
+                <a href="#" class="read-more" onclick="event.preventDefault(); quickSearch('Mudra Yojana small business loan')">
+                    Explore Scheme <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                </a>
+            </div>
+            <div class="scheme-card" id="scheme-ujjwala">
+                <div class="scheme-card-top">
+                    <div class="scheme-icon scheme-icon-women"><i data-lucide="flame"></i></div>
+                    <span class="scheme-tag">Women</span>
+                </div>
+                <h3>PM Ujjwala Yojana</h3>
+                <p>Free LPG connection to women from BPL households to protect their health and improve quality of life.</p>
+                <a href="#" class="read-more" onclick="event.preventDefault(); quickSearch('Ujjwala Yojana LPG gas connection women BPL')">
+                    Explore Scheme <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <div class="section-tag">Simple</div>
+            <h2>How It Works</h2>
+            <p>Find the right scheme in under 30 seconds</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i data-lucide="message-square" style="width:28px;height:28px;"></i></div>
+                <h3>Describe Your Situation</h3>
+                <p>Type in Hindi, Hinglish or English. Our AI understands natural language queries about your needs.</p>
+            </div>
+            <div class="step-arrow"><i data-lucide="arrow-right" style="width:24px;height:24px;"></i></div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i data-lucide="cpu" style="width:28px;height:28px;"></i></div>
+                <h3>AI Finds Best Matches</h3>
+                <p>Semantic search with sentence transformers finds schemes most relevant to your specific situation.</p>
+            </div>
+            <div class="step-arrow"><i data-lucide="arrow-right" style="width:24px;height:24px;"></i></div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i data-lucide="check-circle" style="width:28px;height:28px;"></i></div>
+                <h3>Apply Instantly</h3>
+                <p>View scheme details, eligibility criteria and apply directly through official government portals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="brand-title">
+                    <i data-lucide="landmark"></i>
+                    JanSeva AI
+                </div>
+                <p>A national portal to discover government schemes through AI-powered search. Available in Hindi, Hinglish, and English.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link" title="Twitter"><i data-lucide="twitter" style="width:16px;height:16px;"></i></a>
+                    <a href="#" class="social-link" title="Facebook"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
+                    <a href="#" class="social-link" title="YouTube"><i data-lucide="youtube" style="width:16px;height:16px;"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#categories-section">All Schemes</a>
+                <a href="#popular-section">Popular Schemes</a>
+                <a href="#">Check Eligibility</a>
+            </div>
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <a href="#" onclick="quickSearch('farmer scheme')">Farmers</a>
+                <a href="#" onclick="quickSearch('women empowerment scheme')">Women</a>
+                <a href="#" onclick="quickSearch('student scholarship')">Students</a>
+                <a href="#" onclick="quickSearch('health insurance')">Healthcare</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Support</h4>
+                <p><i data-lucide="mail" style="width:15px;height:15px;"></i> support@janseva.gov.in</p>
+                <p><i data-lucide="phone" style="width:15px;height:15px;"></i> 1800-111-222 (Toll Free)</p>
+                <p><i data-lucide="clock" style="width:15px;height:15px;"></i> Mon–Sat, 9AM–6PM IST</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 JanSeva AI. All rights reserved. | Government of India Initiative</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" title="Back to top">
+        <i data-lucide="chevron-up" style="width:20px;height:20px;"></i>
+    </button>
+
+    <!-- Sign In Modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeSignIn()"></div>
+    <div class="modal" id="signin-modal">
+        <div class="modal-header">
+            <h3>Sign In to JanSeva AI</h3>
+            <button class="modal-close" onclick="closeSignIn()">
+                <i data-lucide="x" style="width:18px;height:18px;"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Mobile Number / Email</label>
+                <input type="text" id="signin-user" placeholder="Enter mobile or email" class="form-input">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="signin-pass" placeholder="Enter password" class="form-input">
+            </div>
+            <button class="form-submit-btn" onclick="handleSignIn()">Sign In</button>
+            <p class="form-note">Don't have an account? <a href="#" onclick="showToast('Registration coming soon!')">Register here</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

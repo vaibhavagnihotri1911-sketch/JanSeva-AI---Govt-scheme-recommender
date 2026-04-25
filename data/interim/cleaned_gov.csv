@@ -1,0 +1,82 @@
+scheme_name,category,ministry,benefits,eligibility,description,target_group,age_min,age_max,gender,income_max,occupation,state
+Pradhan Mantri Jan Dhan Yojana,Financial Inclusion,Ministry of Finance,Bank account + insurance,Unbanked citizens,Financial inclusion,General Public,10,100,All,1000000,All,All
+Ayushman Bharat PM-JAY,Health,Ministry of Health,₹5 lakh insurance,BPL families,Healthcare scheme,Poor Families,0,100,All,300000,All,All
+PM Kisan Samman Nidhi,Farmer,Ministry of Agriculture,₹6000/year,Farmers,Income support,Farmers,18,70,All,600000,Farmer,Rural
+PM Fasal Bima Yojana,Farmer,Ministry of Agriculture,Crop insurance,Farmers,Crop protection,Farmers,18,70,All,1000000,Farmer,Rural
+PM Awas Yojana,Housing,Ministry of Housing,House subsidy,EWS/LIG,Affordable housing,Poor Families,18,70,All,600000,All,All
+Beti Bachao Beti Padhao,Women,Ministry of Women,Education support,Girl child,Promote girls education,Girls,0,25,Female,500000,Student,All
+Atal Pension Yojana,Pension,Ministry of Finance,Pension,Workers 18-40,Retirement support,Workers,18,40,All,500000,Worker,All
+PM Mudra Yojana,Startup,Ministry of Finance,Loan up to 10L,Small business,Business support,Entrepreneurs,18,65,All,1000000,Business,All
+Stand Up India,Startup,Ministry of Finance,Loan for SC/ST/Women,SC/ST/Women,Business promotion,Women/SC/ST,18,65,All,1000000,Business,All
+Digital India,Digital,MeitY,Digital services,All citizens,Digital empowerment,General Public,10,100,All,1000000,All,All
+PM Ujjwala Yojana,Women,Petroleum Ministry,Free LPG,BPL women,Clean fuel,Women,18,60,Female,200000,Housewife,Rural
+PM SVANidhi,Startup,Housing Ministry,Loan for vendors,Street vendors,Vendor support,Urban Poor,18,60,All,300000,Vendor,Urban
+DAY-NRLM,Rural Development,Rural Ministry,SHG support,Rural poor,Livelihood,Rural Poor,18,60,All,300000,Worker,Rural
+DAY-NULM,Urban Development,Housing Ministry,Skill + loan,Urban poor,Urban jobs,Urban Poor,18,60,All,300000,Worker,Urban
+NSAP,Social Welfare,Rural Ministry,Pension,BPL elderly,Social security,Elderly,60,100,All,300000,Unemployed,All
+PMJJBY,Insurance,Finance Ministry,₹2L insurance,18-50,Life insurance,General Public,18,50,All,1000000,All,All
+PMSBY,Insurance,Finance Ministry,₹2L accident,18-70,Accident insurance,General Public,18,70,All,1000000,All,All
+Skill India,Skill,Skill Ministry,Training,Youth,Skill dev,Youth,18,35,All,500000,Student,All
+Startup India,Startup,DPIIT,Tax benefits,Startups,Startup support,Entrepreneurs,18,65,All,1000000,Business,All
+Make in India,Manufacturing,Commerce Ministry,Industrial support,Businesses,Manufacturing,Business,18,65,All,1000000,Business,All
+PM KUSUM,Energy,Renewable Ministry,Solar pumps,Farmers,Solar scheme,Farmers,18,65,All,800000,Farmer,Rural
+PM Matsya Sampada,Fisheries,Fisheries Ministry,Fisher support,Fish farmers,Fisheries growth,Fishermen,18,60,All,600000,Fisherman,Coastal
+Mid Day Meal,Student,Education Ministry,Free meals,School students,Nutrition,Students,5,15,All,300000,Student,All
+National Scholarship Portal,Student,Education Ministry,Scholarships,Students,Education support,Students,10,30,All,400000,Student,All
+Mukhyamantri Kanya Sumangala,Women,UP Govt,Financial aid,Girl child,Support girls,Women,0,25,Female,300000,Student,Uttar Pradesh
+UP Free Laptop Scheme,Student,UP Govt,Laptop,Students,Digital support,Students,16,25,All,300000,Student,Uttar Pradesh
+UP बेरोजगारी भत्ता,Employment,UP Govt,Allowance,Unemployed youth,Support unemployed,Youth,18,35,All,300000,Unemployed,Uttar Pradesh
+Rani Lakshmi Bai Pension,Women,UP Govt,Pension,Women,Support women,Women,40,100,Female,200000,Unemployed,Uttar Pradesh
+UP किसान ऋण मोचन,Farmer,UP Govt,Loan waiver,Farmers,Debt relief,Farmers,18,70,All,500000,Farmer,Uttar Pradesh
+Delhi Free Electricity Scheme,Subsidy,Delhi Govt,Free electricity,Residents,Utility subsidy,General Public,18,100,All,500000,All,Delhi
+Delhi Ladli Scheme,Women,Delhi Govt,Financial support,Girls,Encourage education,Girls,0,25,Female,300000,Student,Delhi
+Mukhyamantri Ladli Behna Yojana,Women,MP Govt,Monthly aid,Women,Women empowerment,Women,21,60,Female,300000,Unemployed,Madhya Pradesh
+KALIA Scheme,Farmer,Odisha Govt,Income support,Farmers,Farming support,Farmers,18,70,All,500000,Farmer,Odisha
+Biju Swasthya Kalyan Yojana,Health,Odisha Govt,Health insurance,Poor families,Healthcare,Poor Families,0,100,All,300000,All,Odisha
+Arogya Karnataka,Health,Karnataka Govt,Health coverage,Residents,Healthcare,General Public,0,100,All,300000,All,Karnataka
+Gruha Lakshmi Scheme,Women,Karnataka Govt,Monthly support,Women,Financial aid,Women,18,60,Female,300000,Housewife,Karnataka
+Mahatma Jyotiba Phule Scheme,Health,Maharashtra Govt,Health insurance,BPL,Healthcare,Poor Families,0,100,All,300000,All,Maharashtra
+Rajshree Yojana,Women,Rajasthan Govt,Financial aid,Girl child,Girl support,Women,0,25,Female,300000,Student,Rajasthan
+Amma Vodi,Student,AP Govt,Financial aid,Mothers of students,Education support,Women,25,50,Female,300000,Housewife,Andhra Pradesh
+Kanyashree Prakalpa,Women,WB Govt,Scholarship,Girls,Education support,Women,13,25,Female,300000,Student,West Bengal
+Chief Minister Girl Child Scheme,Women,Bihar Govt,Financial support,Girls,Encourage education,Women,0,25,Female,300000,Student,Bihar
+Tamil Nadu Marriage Scheme,Women,TN Govt,Marriage assistance,Women,Social welfare,Women,18,40,Female,300000,Unemployed,Tamil Nadu
+Ladli Laxmi Yojana,Women,MP Govt,Financial aid,Girls,Empower girls,Women,0,25,Female,300000,Student,Madhya Pradesh
+Mukhyamantri Medhavi Yojana,Student,MP Govt,Scholarship,Students,Merit support,Students,16,25,All,300000,Student,Madhya Pradesh
+MP Free Scooty Scheme,Student,MP Govt,Scooty,Top students,Encourage girls,Girls,16,25,Female,300000,Student,Madhya Pradesh
+Rajasthan Free Mobile Scheme,Digital,Rajasthan Govt,Smartphone,Women,Digital empowerment,Women,18,60,Female,300000,Housewife,Rajasthan
+Haryana Saksham Yuva,Employment,Haryana Govt,Allowance,Graduates,Youth employment,Youth,18,35,All,300000,Unemployed,Haryana
+Punjab Shagun Scheme,Women,Punjab Govt,Marriage aid,Women,Support marriage,Women,18,40,Female,300000,Unemployed,Punjab
+Gujarat Laptop Sahay Yojana,Student,Gujarat Govt,Laptop subsidy,Students,Digital support,Students,16,25,All,300000,Student,Gujarat
+Maharashtra Shiv Bhojan Yojana,Food,MH Govt,Low-cost food,Poor,Affordable food,Poor Families,18,100,All,300000,All,Maharashtra
+Kerala Karunya Scheme,Health,Kerala Govt,Medical aid,Poor,Healthcare,Poor Families,0,100,All,300000,All,Kerala
+Assam Orunodoi Scheme,Women,Assam Govt,Monthly aid,Women,Financial support,Women,18,60,Female,300000,Housewife,Assam
+Jharkhand Mukhyamantri Yojana,Employment,Jharkhand Govt,Employment,Youth,Job support,Youth,18,35,All,300000,Unemployed,Jharkhand
+Chhattisgarh Rajiv Gandhi Nyay Yojana,Farmer,CG Govt,Income support,Farmers,Farming support,Farmers,18,65,All,500000,Farmer,Chhattisgarh
+Telangana Rythu Bandhu,Farmer,Telangana Govt,Investment support,Farmers,Farming scheme,Farmers,18,65,All,500000,Farmer,Telangana
+Tamil Nadu Amma Canteen,Food,TN Govt,Subsidized food,Urban poor,Food support,Poor Families,18,100,All,300000,All,Tamil Nadu
+West Bengal Swasthya Sathi,Health,WB Govt,Health insurance,Residents,Healthcare,General Public,0,100,All,300000,All,West Bengal
+Bihar Student Credit Card Scheme,Student,Bihar Govt,Education loan,Students,Higher education,Students,18,30,All,400000,Student,Bihar
+Odisha Mission Shakti,Women,Odisha Govt,SHG support,Women,Empowerment,Women,18,60,Female,300000,Worker,Odisha
+UP Mission Shakti,Women,UP Govt,Women safety,Women,Empowerment,Women,18,60,Female,300000,All,Uttar Pradesh
+Delhi Skill Mission,Skill,Delhi Govt,Skill training,Youth,Skill development,Youth,18,35,All,300000,Student,Delhi
+Karnataka Yuva Nidhi,Employment,Karnataka Govt,Allowance,Graduates,Youth support,Youth,18,35,All,300000,Unemployed,Karnataka
+National Overseas Scholarship,Student,Ministry of Social Justice & Empowerment,Full/partial funding for foreign studies,SC/ST/OBC/EWS students with low income,Supports higher education abroad,Students,18,35,All,800000,Student,All
+Dr Ambedkar Scheme of Interest Subsidy on Educational Loans for Overseas Studies,Student,Ministry of Social Justice & Empowerment,Interest subsidy on education loan,OBC/EWS students,Supports overseas education loans,Students,18,35,All,800000,Student,All
+Padho Pardesh Scheme,Student,Ministry of Minority Affairs,Interest subsidy for foreign studies loans,Minority students,Promotes overseas education,Students,18,35,All,600000,Student,All
+National Overseas Scholarship for ST Students,Student,Ministry of Tribal Affairs,Scholarship for foreign education,ST students,Supports tribal students abroad,Students,18,35,All,600000,Student,All
+Fulbright-Nehru Fellowship (India-US),Student,Ministry of External Affairs / USIEF,Full funding for study in USA,Meritorious Indian students,International exchange scholarship,Students,21,40,All,1000000,Student,All
+Commonwealth Scholarship (UK),Student,Ministry of Education / UK Govt,Full scholarship in UK,Meritorious students,Study in UK universities,Students,21,40,All,1000000,Student,All
+Inlaks Shivdasani Foundation Scholarship,Student,Private Foundation,Full funding abroad,Top rank students,Supports higher studies abroad,Students,21,35,All,1000000,Student,All
+JN Tata Endowment Scholarship,Student,Tata Trusts,Loan scholarship,Indian students,Supports foreign studies,Students,21,45,All,1000000,Student,All
+KC Mahindra Scholarship for Foreign Studies,Student,Mahindra Foundation,Interest-free loan,Indian graduates,Supports overseas education,Students,21,35,All,1000000,Student,All
+Chief Minister Overseas Scholarship Scheme,Student,UP Govt,Financial aid for abroad studies,UP students,Supports foreign education,Students,18,35,All,600000,Student,Uttar Pradesh
+UP Dr Ambedkar Overseas Scholarship,Student,UP Govt,Scholarship for SC/ST abroad,SC/ST students UP,Foreign education support,Students,18,35,All,600000,Student,Uttar Pradesh
+Rajiv Gandhi Scholarship for Academic Excellence,Student,Rajasthan Govt,Funding for foreign education,Rajasthan students,Supports top students abroad,Students,18,35,All,800000,Student,Rajasthan
+Swami Vivekananda Merit-cum-Means Overseas Scholarship,Student,West Bengal Govt,Scholarship for study abroad,WB students,Supports higher education abroad,Students,18,35,All,600000,Student,West Bengal
+Chief Minister Overseas Scholarship Scheme (MP),Student,MP Govt,Financial support abroad,MP students,Foreign education support,Students,18,35,All,600000,Student,Madhya Pradesh
+Tamil Nadu Overseas Scholarship Scheme,Student,TN Govt,Scholarship for abroad study,TN students,Supports foreign education,Students,18,35,All,600000,Student,Tamil Nadu
+Karnataka Overseas Scholarship Scheme,Student,Karnataka Govt,Scholarship for foreign studies,Karnataka students,Supports overseas education,Students,18,35,All,600000,Student,Karnataka
+Telangana Overseas Scholarship Scheme (Ambedkar),Student,Telangana Govt,Full funding abroad,SC/ST/Minority students,Foreign education scheme,Students,18,35,All,600000,Student,Telangana
+Andhra Pradesh Overseas Scholarship Scheme,Student,AP Govt,Financial aid abroad,AP students,Supports overseas studies,Students,18,35,All,600000,Student,Andhra Pradesh
+Kerala Overseas Scholarship Scheme,Student,Kerala Govt,Scholarship abroad,Kerala students,Supports higher education abroad,Students,18,35,All,600000,Student,Kerala

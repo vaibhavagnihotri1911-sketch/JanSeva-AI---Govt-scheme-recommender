@@ -1,0 +1,6 @@
+scheme_name,category,description,target_group,age_min,age_max,gender,income_max,occupation,state,ministry,scheme_type,benefits,eligibility
+Pradhan Mantri Mudra Yojana,"business,women",loan support for small businesses,Women Entrepreneurs,18,60,Female,1000000,Business,All,all,all,all,all
+Stand Up India Scheme,"business,women",loan support for women entrepreneurs,Women Entrepreneurs,18,65,Female,1000000,Business,All,all,all,all,all
+Mahila Udyam Nidhi Scheme,"business,women",financial support for women entrepreneurs,Women Entrepreneurs,18,55,Female,1000000,Business,All,all,all,all,all
+PMEGP (Women),"business,women",subsidy-based scheme for women business owners,Women Entrepreneurs,18,60,Female,1000000,Business,All,all,all,all,all
+Udyogini Scheme,"business,women",support for women from low-income groups to start business,Women Entrepreneurs,18,55,Female,300000,Business,All,all,all,all,all
