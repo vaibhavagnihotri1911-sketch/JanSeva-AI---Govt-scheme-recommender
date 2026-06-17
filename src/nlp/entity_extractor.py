@@ -1,18 +1,7 @@
-import spacy
 import re
 
-nlp = None  # Lazy load
-
-def get_nlp():
-    global nlp
-    if nlp is None:
-        nlp = spacy.load("en_core_web_sm")
-    return nlp
-
 def extract_entities(text):
-    nlp_model = get_nlp()
     text = text.lower()
-    doc = nlp_model(text)
     
     user = {
         "age": 25,
