@@ -11,19 +11,16 @@ def extract_entities(text):
         "state": "all",
         "category": "general"
     }
-
     if any(word in text for word in ["student", "btech", "college"]):
         user["occupation"] = "student"
     elif any(word in text for word in ["farmer", "kisan", "agriculture"]):
         user["occupation"] = "farmer"
     elif any(word in text for word in ["business", "entrepreneur", "startup"]):
         user["occupation"] = "business"
-
     if any(word in text for word in ["female", "mahila", "woman", "ladki"]):
         user["gender"] = "female"
     elif any(word in text for word in ["male", "man"]):
         user["gender"] = "male"
-
     if any(word in text for word in ["student", "scholarship", "education"]):
         user["category"] = "student"
     elif any(word in text for word in ["farmer", "kisan"]):
@@ -38,13 +35,14 @@ def extract_entities(text):
         user["category"] = "senior"
     elif any(word in text for word in ["woman", "female", "mahila"]):
         user["category"] = "women"
-
     if any(word in text for word in ["poor", "low income", "garib"]):
         user["income"] = 200000
 
-    age_match = re.search(r'\b\d{1,3}\b', text)
+    # Age: pehle "age <number>" ya "<number> saal/years/yrs" jaisa context dhoondo
+    age_match = re.search(r'(?:age\s*|umar\s*)(\d{1,3})|(\d{1,3})\s*(?:saal|years?|yrs?)', text)
     if age_match:
-        age = int(age_match.group())
+        age_str = age_match.group(1) or age_match.group(2)
+        age = int(age_str)
         if 0 < age < 120:
             user["age"] = age
 
