@@ -23,7 +23,7 @@
 
 
 #calling the function from utils
-from db_utils import insert_scheme
+from db_utils import insert_full_scheme
 
 sample_scheme = {
     "scheme_name": "Automated Test Scheme",
@@ -34,4 +34,4 @@ sample_scheme = {
     "status": "active"
 }
 
-insert_scheme(sample_scheme)
+insert_full_scheme(sample_scheme)
