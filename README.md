@@ -1,10 +1,10 @@
 # JanSeva AI - Government Scheme Recommender
 
-**JanSeva AI** is an intelligent, AI-powered platform designed to bridge the gap between complex government schemes and the common citizen. Using advanced Natural Language Processing (NLP), it allows users to discover relevant schemes by describing their situation in plain language—Hindi, Hinglish, or English.
+**JanSeva AI** is an intelligent, AI-powered platform designed to bridge the gap between complex government schemes and the common citizen. Using Natural Language Processing (NLP) techniques, it allows users to discover relevant schemes by describing their situation in plain language—Hindi, Hinglish, or English.
 
 ## Features
 
-- **AI-Powered Semantic Search**: Uses `sentence-transformers` to understand user intent rather than just keywords.
+- **Lightweight Semantic-Style Search**: Uses `TF-IDF Vectorization` + Cosine Similarity to match user queries against scheme descriptions, going beyond simple keyword matching.
 - **Multilingual Recognition**: Describe your needs in **Hindi**, **Hinglish**, or **English**.
 - **Cross-Browser Voice Search**: 
   - Native **Web Speech API** for Chrome, Edge, and Safari.
@@ -14,7 +14,7 @@
   - Interactive **Carousel** for featured schemes.
   - **Category-based** discovery (Farmers, Students, Women, etc.).
 - **Smart NLP Pipeline**:
-  - Entity Extraction (Age, Income, Occupation, Gender).
+  - Rule-based Entity Extraction (Age, Income, Occupation, Gender).
   - Intent Detection to filter relevant schemes.
   - Strict Eligibility Filtering.
 
@@ -23,8 +23,9 @@
 - **Frontend**: HTML5, Vanilla CSS, Modern JavaScript (ES6+), Lucide Icons.
 - **Backend**: Python, Flask.
 - **AI/NLP**: 
-  - `Sentence-Transformers` (`all-MiniLM-L6-v2`) for semantic matching.
+  - `Scikit-learn` TF-IDF Vectorizer + Cosine Similarity for lightweight relevance ranking.
   - `SpeechRecognition` & `pydub` for voice transcription.
+  - `Google Translate` (`deep-translator`) + `indic-transliteration` for Hindi/Hinglish text normalization.
   - `Pandas` for data management and filtering.
 
 ## Project Structure
@@ -38,7 +39,7 @@ india_schemes_project/
 │   ├── style.css
 │   └── script.js
 ├── src/
-│   ├── nlp/               # Semantic search & entity extraction
+│   ├── nlp/               # Text search, entity extraction & normalization
 │   └── recommender/       # Core recommendation logic
 └── venv/                  # Virtual environment
 ```
@@ -46,27 +47,33 @@ india_schemes_project/
 ## Getting Started
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/vaibhavagnihotri1911-sketch/JanSeva-AI---Govt-scheme-recommender.git
 cd india_schemes_project
 ```
 
 ### 2. Set up Virtual Environment
+
 ```powershell
 python -m venv venv
 venv\Scripts\activate
 ```
 
 ### 3. Install Dependencies
+
 ```powershell
-pip install flask pandas sentence-transformers SpeechRecognition pydub
+pip install flask pandas scikit-learn SpeechRecognition pydub deep-translator indic-transliteration
 ```
+
 *(Note: For Firefox voice support, ensure `ffmpeg` is installed on your system for pydub).*
 
 ### 4. Run the Application
+
 ```powershell
 python api.py
 ```
+
 Open `http://localhost:5000` in your browser.
 
 ## How to Use
@@ -81,4 +88,7 @@ Open `http://localhost:5000` in your browser.
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
-**Developed by Vaibhav Agnihotri - Bridging the gap with AI.**
+
+## Team
+
+Built collaboratively by **Vaibhav Agnihotri** and **Sneha Singh** as part of ongoing project work.
